@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mini Translator</title>
+</head>
+<body>
+    <h1>Mini Translator English → Japanese</h1>
+    
+    <form method="get" action="/">
+        <input type="text" name="q" placeholder="Enter a word">
+        <button type="submit">Translate</button>
+    </form>
+
+    {% if result %}
+        <h2>Results</h2>
+        <p><strong>English:</strong> {{ result.english }}</p>
+        <p><strong>Japanese:</strong> {{ result.japanese }}</p>
+        <p><strong>Kana:</strong> {{ result.kana }}</p>
+        <p><strong>Romaji:</strong> {{ result.romaji }}</p>
+        <img src="{{ result.image }}" alt="{{ result.english }}">
+    {% endif %}
+</body>
+</html>
